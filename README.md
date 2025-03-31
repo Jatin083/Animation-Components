@@ -13,7 +13,7 @@
 ![LPR Preview](path/to/image-or-video)
 
 ## killerGSAP
-![killerGSAP Preview](path/to/image-or-video)
+![killerGSAP Preview](https://killer-gsap.vercel.app/)
 
 ## newtextanimation
 ![New Text Animation Preview](video/newtxtanimation.mp4)
