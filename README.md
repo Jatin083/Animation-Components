@@ -1,7 +1,7 @@
 # Animation-Components
 
 ## 3D Animation
-![3D Animation Preview](path/to/image-or-video)
+![3D Animation Preview](https://res.cloudinary.com/dkgv8ynjp/video/upload/v1743416941/pkzwrooq54r1wfitgrsq.mp4)
 
 ## Carousel Slider
 ![Carousel Slider Preview](path/to/image-or-video)
