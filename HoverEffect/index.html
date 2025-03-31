@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="verticle-lines">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="site-wrap">
+        <header role="header" class="header">
+            <div class="logo">
+                <a href="/index.html">
+                    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="https://www.w3.org/2000/svg">
+                        <circle cx="21" cy="21" r="21" fill="#252c45">
+                    </svg>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <a href="#" data-cursor-text="Menu">
+                    <span class="label">Menu</span>
+                    <span class="lines"></span>
+                </a>
+            </div>
+        </header>
+
+        <div class="hero">
+            <ul class="services">
+                <li><a href="#" data-cursor-video="https://videos.pexels.com/video-files/30946903/13232230_1080_1920_60fps.mp4">
+                    <span class="magnetic">Websites</span></a></li>
+                <li><a href="#" data-cursor-img="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <span class="magnetic">Apps</span></a></li>
+                <li><a href="#" data-cursor-img="https://images.unsplash.com/photo-1591370264374-9a5aef8df17a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <span class="magnetic">Branding</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const cursor = new MouseFollower({})
+
+        var magnets = document.querySelectorAll('.magnetic')
+        var strength = 150;
+
+        magnets.forEach((magnet) => {
+            magnet.addEventListener('mousemove', moveMagnet);
+            magnet.addEventListener('mouseout', function(event){
+                TweenMax.to(event.currentTarget, 1, {
+                    x: 0,
+                    y: 0,
+                    ease: Power4.easeOut,
+                })
+            })
+        });
+
+        function moveMagnet(event){
+           console.log('mouse moverd...');
+           var magnetButton = event.currentTarget;
+           var bounding = magnetButton.getBoundingClientRect();
+
+           TweenMax.to(magnetButton, 1, {
+            x:
+               ((event.clientX - bounding.left) / magnetButton.offsetWidth 
+               - 0.5) * strength,
+
+            y:
+               ((event.clientY - bounding.top) / magnetButton.offsetHeight 
+               - 0.5) * strength,   
+            
+               ease: Power4.easeOut,
+
+           })
+        }
+    </script>
+</body>
+
+</html>
