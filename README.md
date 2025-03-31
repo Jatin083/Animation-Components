@@ -16,7 +16,7 @@
 ![killerGSAP Preview](path/to/image-or-video)
 
 ## newtextanimation
-![New Text Animation Preview](path/to/image-or-video)
+![New Text Animation Preview](video/newtxtanimation.mp4)
 
 ## Responsive Nav
 ![Responsive Nav Preview](path/to/image-or-video)
